@@ -26,11 +26,11 @@ public:
         }
         int totalCount = 1;
         while(!q.empty()){
-            vector<int> test;
+            vector<int> innerVect;
             int childNodeCount = 0;
             while(totalCount--){
                 TreeNode* tmpNode = q.front();
-                test.push_back(tmpNode->val);
+                innerVect.push_back(tmpNode->val);
                 if(tmpNode->left != NULL){
                     q.push(tmpNode->left);
                     childNodeCount++;
@@ -42,7 +42,7 @@ public:
                 q.pop();
             }
             totalCount = childNodeCount;
-            retVecVect.push_back(test);
+            retVecVect.push_back(innerVect);
         }
         return retVecVect;
     }
